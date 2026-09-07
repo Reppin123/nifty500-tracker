@@ -42,4 +42,8 @@ Takes that raw JSON and bulk-writes one formatted sheet per symbol
 (navy header, ₹ currency format, frozen panes, banded table) into the
 target workbook, via openpyxl. Cross-platform.
 
+`nifty500_raw.csv` in this repo root is the full Nifty 500 symbol list
+(Company Name, Industry, Symbol, Series, ISIN Code — `Symbol` is column
+index 2) that both fetch scripts expect by default.
+
 See each script's own `workflow.md` for exact usage.

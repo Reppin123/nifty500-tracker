@@ -25,11 +25,12 @@ reports it can't find `msedge.exe`, pass its path explicitly with
 
 Run this from the repo root:
 ```
-uv run --script scripts/nse-history-fetch-windows/run.py --symbols-csv <symbols.csv> --symbol-col 2 --out-dir raw_json --launch-edge
+uv run --script scripts/nse-history-fetch-windows/run.py --symbols-csv nifty500_raw.csv --symbol-col 2 --out-dir raw_json --launch-edge
 ```
-Replace `<symbols.csv>` with the CSV of tickers you're fetching (see
-`nifty500_raw.csv` at the repo root for the format already used here —
-column index 2 holds the symbol).
+`nifty500_raw.csv` is already in this repo root (the full Nifty 500 symbol
+list, `Symbol` is column index 2) — that exact command works as-is, no
+substitution needed. Only swap it out if you want a different/custom ticker
+list.
 
 This single command is fully self-driving: it launches its own isolated Edge
 window with a scratch profile (works even if the user already has Edge open
