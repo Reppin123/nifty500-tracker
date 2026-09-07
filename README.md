@@ -24,8 +24,18 @@ Safari tab (macOS only, avoids the 429/bot-wall raw requests hit).
 Same idea as the macOS version, but drives a live Microsoft Edge tab via the
 Chrome DevTools Protocol instead of AppleScript (Edge is Chromium, so it
 speaks CDP natively). Same output schema, same resumable/paced fetching,
-just a Windows-native remote-control surface instead of Safari. See its
-`workflow.md` for the one-time Edge setup step.
+just a Windows-native remote-control surface instead of Safari — and it's
+fully self-driving (`--launch-edge` launches its own Edge instance and
+auto-opens the tab, no manual browser step). See its `workflow.md` for
+details.
+
+## Running this with your own AI agent (Abhishek, start here)
+If you're handing this repo to an AI coding agent (Claude, ChatGPT with
+terminal/computer-use access, etc.) and want it to run the whole pipeline
+for you — fetch the data, build the workbook, verify the result — point it
+at **`AGENTS.md`** in this repo root. It's a full step-by-step runbook
+written for an agent to execute autonomously from a terminal, no manual
+browser clicking required on your end.
 
 ## Phase 2 — scripts/nse-sheets-build
 Takes that raw JSON and bulk-writes one formatted sheet per symbol
