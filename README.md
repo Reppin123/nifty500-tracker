@@ -16,9 +16,16 @@ But `scripts/nse-sheets-build` (the part that turns raw JSON into the
 formatted Excel sheets) is plain Python + openpyxl and runs fine on
 Windows — useful if someone else fetches fresh JSON and hands it to you.
 
-## Phase 1 — scripts/nse-history-fetch
+## Phase 1 (macOS) — scripts/nse-history-fetch
 Pulls raw OHLCV JSON per symbol from Yahoo Finance's chart API via a live
 Safari tab (macOS only, avoids the 429/bot-wall raw requests hit).
+
+## Phase 1 (Windows) — scripts/nse-history-fetch-windows
+Same idea as the macOS version, but drives a live Microsoft Edge tab via the
+Chrome DevTools Protocol instead of AppleScript (Edge is Chromium, so it
+speaks CDP natively). Same output schema, same resumable/paced fetching,
+just a Windows-native remote-control surface instead of Safari. See its
+`workflow.md` for the one-time Edge setup step.
 
 ## Phase 2 — scripts/nse-sheets-build
 Takes that raw JSON and bulk-writes one formatted sheet per symbol
